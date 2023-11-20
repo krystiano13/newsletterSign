@@ -18,23 +18,35 @@
 </html>
 
 <style lang="scss" is:global>
-    body {
-        width : 100vw;
-        height : 100vh;
-        overflow: hidden;
-        margin : 0;
-        padding : 0;
-    }
+  :root {
+    --tomato: hsl(4, 100%, 67%);
+    --tomato-light: hsl(4, 100%, 95%);
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+    --gradient-pink: #ff3e83;
+    --gradient-orange: #fd634a;
+    --gradient-shadow: #ff3e8355;
+  }
 
-    :root {
-      --tomato: hsl(4, 100%, 67%);
-      --tomato-light: hsl(4, 100%, 95%);
-      --dark-slate-grey: hsl(234, 29%, 20%);
-      --charcoal-grey: hsl(235, 18%, 26%);
-      --grey: hsl(231, 7%, 60%);
-      --white: hsl(0, 0%, 100%);
-      --gradient-pink: #ff3e83;
-      --gradient-orange: #fd634a;
-      --gradient-shadow: #ff3e8355;
-    }
+  @font-face {
+    font-family: 'Roboto Bold';
+    src: url("../../public/fonts/Roboto-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: 'Roboto Regular';
+    src: url("../../public/fonts/Roboto-Regular.ttf");
+  }
+
+  body {
+    width : 100vw;
+    height : 100vh;
+    overflow: hidden;
+    margin : 0;
+    padding : 0;
+    background-color: var(--charcoal-grey);
+  }
+
 </style>
