@@ -34,6 +34,23 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
     </main>
 </Layout>
 
+<script lang="js">
+    const form = document.querySelector('form');
+    const input = document.querySelector('input');
+
+    form.addEventListener('submit',(e) => {
+        e.preventDefault();
+
+        if(input.validity.typeMismatch) {
+            input.classList.add('invalid');
+        }
+
+        else {
+            input.classList.remove('invalid');
+        }
+    })
+</script>
+
 <style lang="scss">
   main {
     min-width: 62rem;
@@ -44,6 +61,18 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     padding : 1rem;
+
+    @media screen and (min-width : 1024px) {
+      transform: scale(0.8);
+    }
+
+    @media screen and (min-width : 1200px) {
+      transform: scale(0.9);
+    }
+
+    @media screen and (min-width : 1600px) {
+      transform: scale(1);
+    }
 
     .image {
       width : 50%;
@@ -107,6 +136,10 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
         input {
           font-family: 'Roboto', sans-serif;
           border: solid grey 1px;
+        }
+
+        .invalid {
+          border-color : red;
         }
 
         button {
