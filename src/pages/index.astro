@@ -47,12 +47,15 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
 
     .image {
       width : 50%;
-      height: 80%;
+      height: 75%;
       padding-left: 2rem;
+      display: flex;
+      justify-content: flex-end;
 
       #desktopImg {
-        width : 100%;
+        width : 95%;
         height : auto;
+        object-fit: contain;
       }
     }
 
@@ -111,6 +114,12 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
           color: var(--white);
           background-color: var(--dark-slate-grey);
           border: none;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background: linear-gradient(90deg,var(--gradient-pink), var(--gradient-orange));
+          box-shadow: var(--gradient-shadow) 0px 6px 12px -2px,  var(--gradient-shadow) 0px 3px 7px -3px;
         }
       }
 
