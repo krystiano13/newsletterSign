@@ -10,13 +10,28 @@ import listIcon from '../images/icon-list.svg';
             <Image id="img" src={listIcon} alt="list icon" />
             <h1>Thanks for subscribing!</h1>
             <p>
-                A confirmation email has been sent to <span>123@123.pl</span>.
+                A confirmation email has been sent to <span></span>.
                 Please open it and click the button inside to confirm your subscription.
             </p>
             <button>Dismiss message</button>
         </section>
     </main>
 </Layout>
+
+<script lang="js">
+    if(!localStorage.getItem("email") || localStorage.getItem("email") === null) {
+        window.location.href = "/";
+    }
+
+    const span = document.querySelector("span");
+    const exitButton = document.querySelector("button");
+    span.innerText = localStorage.getItem("email");
+
+    exitButton.addEventListener('click', () => {
+        localStorage.setItem("email", null);
+        window.location.href = "/";
+    })
+</script>
 
 <style lang="scss">
     main {
@@ -53,6 +68,10 @@ import listIcon from '../images/icon-list.svg';
             line-height: 1.5rem;
             margin-top: 1rem;
             margin-bottom: 2rem;
+
+            span {
+              font-family: 'Roboto Bold', sans-serif;
+            }
           }
 
           button {
