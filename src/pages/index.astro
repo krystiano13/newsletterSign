@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/layout.astro';
+import listIcon from '../images/icon-list.svg';
 ---
 
 <Layout>
@@ -7,11 +9,18 @@ import Layout from '../layouts/layout.astro';
         <section class="content">
             <h1>Stay updated!</h1>
             <p>Join 60,000+ product managers receiving monthly updates on:</p>
-            <ul>
-                <li>Product discovery and building what matters</li>
-                <li>Measuring to ensure updates are a success</li>
-                <li>And much more!</li>
-            </ul>
+            <div class="item">
+                <Image src={listIcon} alt="list icon" />
+                Product discovery and building what matters
+            </div>
+            <div class="item">
+                <Image src={listIcon} alt="list icon" />
+                Measuring to ensure updates are a success
+                </div>
+            <div class="item">
+                <Image src={listIcon} alt="list icon" />
+                And much more!
+            </div>
             <form>
                 <label>Email address</label>
                 <input placeholder="email@company.com" type="email"/>
@@ -21,5 +30,45 @@ import Layout from '../layouts/layout.astro';
         <section class="image"></section>
     </main>
 </Layout>
+
+<style lang="scss">
+    main {
+        min-width : 62rem;
+        min-height : 42rem;
+        background-color: var(--white);
+        padding : 5rem;
+        box-sizing: border-box;
+        border-radius: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        .content {
+            h1 {
+                font-size : 3.5rem;
+                font-family: 'Roboto Bold';
+                color : var(--dark-slate-grey);
+                margin : 0;
+            }
+
+            p {
+              font-family: 'Roboto', sans-serif;
+              font-weight: 300;
+              font-size : 1.2rem;
+              margin : 0;
+              max-width: 55%;
+            }
+
+            .item {
+              margin-top : 1rem;
+              margin-bottom: 1rem;
+              display: flex;
+              align-items: center;
+
+              img {
+                margin-right: .5rem;
+              }
+            }
+        }
+    }
+</style>
 
 
