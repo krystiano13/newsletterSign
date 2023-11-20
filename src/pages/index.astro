@@ -25,7 +25,9 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
             <form>
                 <label>Email address</label>
                 <input placeholder="email@company.com" type="email"/>
-                <button type="submit">Subscribe to monthly newsletter</button>
+                <a href="/result">
+                    <button type="submit">Subscribe to monthly newsletter</button>
+                </a>
             </form>
         </section>
         <section class="image">
@@ -35,20 +37,18 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
 </Layout>
 
 <script lang="js">
-    const form = document.querySelector('form');
+    const anchor = document.querySelector('a');
     const input = document.querySelector('input');
 
-    form.addEventListener('submit',(e) => {
-        e.preventDefault();
-
+    anchor.addEventListener('click',(e) => {
         if(input.validity.typeMismatch) {
             input.classList.add('invalid');
+            window.location.href = '/';
         }
 
         else {
             input.classList.remove('invalid');
             localStorage.setItem("email", input.value);
-            window.location.href = '/result';
         }
     })
 </script>
@@ -127,6 +127,10 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
           font-size : 1.1rem;
         }
 
+        a {
+          width : 100%;
+        }
+
         input,button {
           margin-top : .5rem;
           margin-bottom : .5rem;
@@ -150,6 +154,7 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
           background-color: var(--dark-slate-grey);
           border: none;
           cursor: pointer;
+          width : 100%;
         }
 
         button:hover {

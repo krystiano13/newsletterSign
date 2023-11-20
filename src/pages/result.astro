@@ -13,7 +13,10 @@ import listIcon from '../images/icon-list.svg';
                 A confirmation email has been sent to <span></span>.
                 Please open it and click the button inside to confirm your subscription.
             </p>
-            <button>Dismiss message</button>
+            <a href="/">
+                <button>Dismiss message</button>
+            </a>
+
         </section>
     </main>
 </Layout>
@@ -24,12 +27,11 @@ import listIcon from '../images/icon-list.svg';
     }
 
     const span = document.querySelector("span");
-    const exitButton = document.querySelector("button");
+    const exitButton = document.querySelector("a");
     span.innerText = localStorage.getItem("email");
 
     exitButton.addEventListener('click', () => {
         localStorage.setItem("email", null);
-        window.location.href = "/";
     })
 </script>
 
