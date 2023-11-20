@@ -1,16 +1,96 @@
 ---
+import {Image} from 'astro:assets';
 import Layout from '../layouts/layout.astro';
+import listIcon from '../images/icon-list.svg';
 ---
 
 <Layout>
     <main>
         <section class="content">
+            <Image id="img" src={listIcon} alt="list icon" />
             <h1>Thanks for subscribing!</h1>
             <p>
-                A confirmation email has been sent to 123@123.pl.
+                A confirmation email has been sent to <span>123@123.pl</span>.
                 Please open it and click the button inside to confirm your subscription.
             </p>
             <button>Dismiss message</button>
         </section>
     </main>
 </Layout>
+
+<style lang="scss">
+    main {
+        min-width: 35rem;
+        max-width : 35rem;
+        min-height: 35rem;
+        background-color: var(--white);
+        box-sizing: border-box;
+        border-radius: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        display: flex;
+        padding : 1rem;
+
+        .content {
+          width: 100%;
+          padding : 5rem;
+          padding-right : 0rem;
+          padding-bottom: 0rem;
+
+          h1 {
+            font-size: 3.5rem;
+            font-family: 'Roboto Bold';
+            color: var(--dark-slate-grey);
+            margin: 0;
+            margin-top : 1rem;
+          }
+
+          p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            margin: 0;
+            max-width: 85%;
+            line-height: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+          }
+
+          button {
+            margin-top : .5rem;
+            margin-bottom : .5rem;
+            padding : 1rem;
+            font-size : 1rem;
+            border-radius: .5rem;
+            width : 85%;
+            font-family: 'Roboto Bold', sans-serif;
+            color: var(--white);
+            background-color: var(--dark-slate-grey);
+            border: none;
+            cursor: pointer;
+          }
+
+          button:hover {
+            background: linear-gradient(90deg,var(--gradient-pink), var(--gradient-orange));
+            box-shadow: var(--gradient-shadow) 0px 6px 12px -2px,  var(--gradient-shadow) 0px 3px 7px -3px;
+          }
+
+          #img {
+            width : 15%;
+            height : auto;
+          }
+        }
+
+        @media screen and (min-width : 1024px) {
+            transform: scale(0.8);
+        }
+
+        @media screen and (min-width : 1200px) {
+            transform: scale(0.9);
+        }
+
+        @media screen and (min-width : 1600px) {
+            transform: scale(1);
+        }
+
+    }
+</style>
