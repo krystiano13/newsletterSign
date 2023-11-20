@@ -1,0 +1,40 @@
+---
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Krystian Zieja" />
+    <meta name="description" content="Best newsletter on the internet" />
+    <meta name="keywords" content="newsletter, sign, join" />
+    <title>Newsletter</title>
+</head>
+<body>
+    <slot />
+</body>
+</html>
+
+<style lang="scss" is:global>
+    body {
+        width : 100vw;
+        height : 100vh;
+        overflow: hidden;
+        margin : 0;
+        padding : 0;
+    }
+
+    :root {
+      --tomato: hsl(4, 100%, 67%);
+      --tomato-light: hsl(4, 100%, 95%);
+      --dark-slate-grey: hsl(234, 29%, 20%);
+      --charcoal-grey: hsl(235, 18%, 26%);
+      --grey: hsl(231, 7%, 60%);
+      --white: hsl(0, 0%, 100%);
+      --gradient-pink: #ff3e83;
+      --gradient-orange: #fd634a;
+      --gradient-shadow: #ff3e8355;
+    }
+</style>
