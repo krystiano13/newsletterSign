@@ -3,6 +3,7 @@ import {Image} from 'astro:assets';
 import Layout from '../layouts/layout.astro';
 import listIcon from '../images/icon-list.svg';
 import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
+import ilustrationMobile from '../images/illustration-sign-up-mobile.svg';
 ---
 
 <Layout>
@@ -30,8 +31,11 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
                 </a>
             </form>
         </section>
-        <section class="image">
-            <Image id="desktopImg" src={ilustrationDesktop} alt="list icon"/>
+        <section id="desktopImg" class="image">
+            <Image src={ilustrationDesktop} alt="list icon"/>
+        </section>
+        <section id="mobileImg" class="image">
+            <Image src={ilustrationMobile} alt="list icon"/>
         </section>
     </main>
 </Layout>
@@ -64,6 +68,17 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
     display: flex;
     padding : 1rem;
 
+    @media screen and (max-width : 1024px) and (orientation: portrait) {
+      flex-direction: column-reverse;
+      width : 90vw;
+      min-width: 90vw;
+      height : 90vh;
+      max-height: 90vh;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      padding-top: 0;
+    }
+
     @media screen and (min-width : 1024px) {
       transform: scale(0.8);
     }
@@ -78,15 +93,52 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
 
     .image {
       width : 50%;
-      height: 75%;
+      height: 42%;
       padding-left: 2rem;
       display: flex;
       justify-content: flex-end;
 
+      @media screen and (max-width: 1024px) and (orientation: portrait) {
+        width : 100%;
+        height: 40%;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+
+        @media screen and (max-width: 400px) {
+          height: 35%;
+        }
+
+        img {
+          width : 100%;
+          height: 100%;
+          object-fit: cover;
+          border-bottom-left-radius: 2vh;
+          border-bottom-right-radius: 2vh;
+        }
+      }
+
       #desktopImg {
         width : 95%;
         height : auto;
-        object-fit: contain;
+      }
+    }
+
+    @media screen and (max-width : 1024px) and (orientation: portrait) {
+      #desktopImg {
+        display: none;
+      }
+      #mobileImg {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width : 800px) and (orientation: landscape){
+      #desktopImg {
+        display: flex;
+      }
+      #mobileImg {
+        display: none;
       }
     }
 
@@ -96,11 +148,22 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
       padding-right : 0rem;
       padding-bottom: 0rem;
 
+      @media screen and (max-width : 1024px) and (orientation: portrait) {
+        width : 100%;
+        height: 58%;
+        padding : 0rem;
+        padding-top: 2rem;
+      }
+
       h1 {
         font-size: 3.5rem;
         font-family: 'Roboto Bold';
         color: var(--dark-slate-grey);
         margin: 0;
+
+        @media screen and (max-width : 1024px) and (orientation: portrait) {
+            font-size: 2.5rem;
+        }
       }
 
       p {
@@ -112,6 +175,10 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
         line-height: 1.5rem;
         margin-top: 1rem;
         margin-bottom: 2rem;
+
+        @media screen and (max-width : 1024px) and (orientation: portrait) {
+          font-size: 1rem;
+        }
       }
 
       form {
@@ -121,10 +188,19 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
         flex-direction: column;
         width : 95%;
 
+        @media screen and (max-width : 1024px) and (orientation: portrait) {
+          margin-top: 1rem;
+          width: 100%;
+        }
+
         label {
           font-family: 'Roboto Bold', sans-serif;
           color: var(--dark-slate-grey);
           font-size : 1.1rem;
+
+          @media screen and (max-width : 1024px) and (orientation: portrait) {
+            font-size: .9rem;
+          }
         }
 
         a {
@@ -137,6 +213,11 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
           padding : 1rem;
           font-size : 1rem;
           border-radius: .5rem;
+
+          @media screen and (max-width : 1024px) and (orientation: portrait) {
+            font-size: .8rem;
+            padding: 0.5rem;
+          }
         }
 
         input {
@@ -169,6 +250,12 @@ import ilustrationDesktop from '../images/illustration-sign-up-desktop.svg';
         display: flex;
         align-items: center;
         font-family: 'Roboto Regular', sans-serif;
+
+        @media screen and (max-width : 1024px) and (orientation: portrait) {
+          font-size: .8rem;
+          margin-top: .5rem;
+          margin-bottom: .5rem;
+        }
 
         img {
           margin-right: 1rem;
