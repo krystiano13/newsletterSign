@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import {Image} from 'astro:assets';
 import Layout from '../layouts/layout.astro';
 import listIcon from '../images/icon-list.svg';
 ---
@@ -10,15 +10,15 @@ import listIcon from '../images/icon-list.svg';
             <h1>Stay updated!</h1>
             <p>Join 60,000+ product managers receiving monthly updates on:</p>
             <div class="item">
-                <Image src={listIcon} alt="list icon" />
+                <Image src={listIcon} alt="list icon"/>
                 Product discovery and building what matters
             </div>
             <div class="item">
-                <Image src={listIcon} alt="list icon" />
+                <Image src={listIcon} alt="list icon"/>
                 Measuring to ensure updates are a success
-                </div>
+            </div>
             <div class="item">
-                <Image src={listIcon} alt="list icon" />
+                <Image src={listIcon} alt="list icon"/>
                 And much more!
             </div>
             <form>
@@ -32,43 +32,85 @@ import listIcon from '../images/icon-list.svg';
 </Layout>
 
 <style lang="scss">
-    main {
-        min-width : 62rem;
-        min-height : 42rem;
-        background-color: var(--white);
-        padding : 5rem;
-        box-sizing: border-box;
-        border-radius: 2rem;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  main {
+    min-width: 62rem;
+    min-height: 42rem;
+    background-color: var(--white);
+    padding: 6rem;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
 
-        .content {
-            h1 {
-                font-size : 3.5rem;
-                font-family: 'Roboto Bold';
-                color : var(--dark-slate-grey);
-                margin : 0;
-            }
+    .content {
+      width: 60%;
 
-            p {
-              font-family: 'Roboto', sans-serif;
-              font-weight: 300;
-              font-size : 1.2rem;
-              margin : 0;
-              max-width: 55%;
-            }
+      h1 {
+        font-size: 3.5rem;
+        font-family: 'Roboto Bold';
+        color: var(--dark-slate-grey);
+        margin: 0;
+      }
 
-            .item {
-              margin-top : 1rem;
-              margin-bottom: 1rem;
-              display: flex;
-              align-items: center;
+      p {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 1.05rem;
+        margin: 0;
+        max-width: 85%;
+        line-height: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
 
-              img {
-                margin-right: .5rem;
-              }
-            }
+      form {
+        margin-top: 2rem;
+
+        display : flex;
+        flex-direction: column;
+        width : 80%;
+
+        label {
+          font-family: 'Roboto Bold', sans-serif;
+          color: var(--dark-slate-grey);
+          font-size : 1.1rem;
         }
+
+        input,button {
+          margin-top : .5rem;
+          margin-bottom : .5rem;
+          padding : 1rem;
+          font-size : 1rem;
+          border-radius: .5rem;
+        }
+
+        input {
+          font-family: 'Roboto', sans-serif;
+          border: solid grey 1px;
+        }
+
+        button {
+          font-family: 'Roboto Bold', sans-serif;
+          color: var(--white);
+          background-color: var(--dark-slate-grey);
+          border: none;
+        }
+      }
+
+      .item {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        font-family: 'Roboto Regular', sans-serif;
+
+        img {
+          margin-right: 1rem;
+        }
+
+      }
     }
+  }
 </style>
 
 
