@@ -36,6 +36,15 @@ import listIcon from '../images/icon-list.svg';
 </script>
 
 <style lang="scss">
+
+    body {
+      width : 100vw;
+      @media screen and (max-width : 1024px) and (orientation: portrait) {
+        display: flex;
+        align-items: flex-start;
+      }
+    }
+
     main {
         min-width: 35rem;
         max-width : 35rem;
@@ -47,11 +56,31 @@ import listIcon from '../images/icon-list.svg';
         display: flex;
         padding : 1rem;
 
+      @media screen and (max-width : 1024px) and (orientation: portrait) {
+        width : 90vw;
+        min-width: 90vw;
+        height : 46vh;
+        min-height: 46vh;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding-top: 0;
+
+        @media screen and (max-width : 600px) {
+          height : 60vh;
+          min-height: 60vh;
+        }
+
+      }
+
         .content {
           width: 100%;
           padding : 5rem;
           padding-right : 0rem;
           padding-bottom: 0rem;
+
+          @media screen and (max-width : 1024px) and (orientation: portrait) {
+            padding : 1rem;
+          }
 
           h1 {
             font-size: 3.5rem;
@@ -59,6 +88,14 @@ import listIcon from '../images/icon-list.svg';
             color: var(--dark-slate-grey);
             margin: 0;
             margin-top : 1rem;
+
+            @media screen and (max-width : 1024px) and (orientation: portrait) {
+              font-size: 2.5rem;
+
+              @media screen and (min-width : 900px) {
+                font-size: 3.5rem;
+              }
+            }
           }
 
           p {
@@ -70,6 +107,15 @@ import listIcon from '../images/icon-list.svg';
             line-height: 1.5rem;
             margin-top: 1rem;
             margin-bottom: 2rem;
+
+            @media screen and (max-width : 1024px) and (orientation: portrait) {
+              font-size: 1rem;
+              max-width: 100%;
+
+              @media screen and (min-width : 900px) {
+                font-size: 1.5rem;
+              }
+            }
 
             span {
               font-family: 'Roboto Bold', sans-serif;
@@ -88,6 +134,8 @@ import listIcon from '../images/icon-list.svg';
             background-color: var(--dark-slate-grey);
             border: none;
             cursor: pointer;
+
+
           }
 
           button:hover {
