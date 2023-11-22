@@ -26,7 +26,7 @@ import ilustrationMobile from '../images/illustration-sign-up-mobile.svg';
             <form>
                 <label>Email address</label>
                 <input placeholder="email@company.com" type="email"/>
-                <a href="/result">
+                <a href="/newsletterSign/result">
                     <button type="submit">Subscribe to monthly newsletter</button>
                 </a>
             </form>
@@ -47,7 +47,7 @@ import ilustrationMobile from '../images/illustration-sign-up-mobile.svg';
     anchor.addEventListener('click',(e) => {
         if(input.validity.typeMismatch) {
             input.classList.add('invalid');
-            window.location.href = '/';
+            window.location.href = '/newsletterSign/';
         }
 
         else {
